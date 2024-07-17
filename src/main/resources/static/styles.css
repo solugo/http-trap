@@ -1,0 +1,59 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #EEE;
+}
+#url {
+    padding: 0.5rem;
+    background: #666;
+    color: #FFF;
+}
+#requests > div {
+    font-family: monospace;
+    margin: 0.5rem;
+    background: #CCC;
+    color: #000;
+    border: solid 1pt #222;
+}
+
+#requests .location > span {
+    display: inline-block;
+    padding: 0.5rem;
+}
+#requests .timestamp {
+    float: right;
+    color: #222;
+}
+#requests .method {
+    color: #FFF;
+    background-color: #039;
+}
+
+#requests .headers {
+    margin: 0.2rem;
+    padding: 0.2rem;
+}
+
+#requests .headers b {
+    color: #666;
+    padding-right: 0.5rem;
+}
+
+#requests .body {
+    margin: 0.2rem;
+    padding: 0.2rem;
+    border: solid 1pt #AAA;
+    background: #FFF;
+}
+
+table {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+
+th {
+    padding-top: 1rem;
+    text-align: left;
+}
+
