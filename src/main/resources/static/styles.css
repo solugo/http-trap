@@ -3,11 +3,13 @@ body {
     margin: 0;
     background: #EEE;
 }
+
 #url {
     padding: 0.5rem;
     background: #666;
     color: #FFF;
 }
+
 #requests > div {
     font-family: monospace;
     margin: 0.5rem;
@@ -16,15 +18,22 @@ body {
     border: solid 1pt #222;
 }
 
-#requests .location > span {
-    display: inline-block;
+#requests .location {
+    display: grid;
+    padding: 0;
+    grid-gap: 0.5rem;
+    grid-template-columns: 3rem 1fr auto;
+}
+
+#requests .location > * {
     padding: 0.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
-#requests .timestamp {
-    float: right;
-    color: #222;
-}
+
 #requests .method {
+    text-align: center;
     color: #FFF;
     background-color: #039;
 }
@@ -46,14 +55,26 @@ body {
     background: #FFF;
 }
 
-table {
+.table {
     width: 100%;
+    display: grid;
     padding: 0.5rem;
+    grid-gap: 0.5rem;
+    grid-template-columns: 15rem 1fr;
 }
 
-
-th {
-    padding-top: 1rem;
-    text-align: left;
+.table > * {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
+.table-header {
+    font-weight: bold;
+    grid-column: 1 / -1;
+}
+
+table {
+    padding: 0.5rem;
+    table-layout: fixed;
+}

@@ -110,53 +110,38 @@ fun main() {
 
                             table {
                                 call.request.queryParameters.toMap().takeUnless { it.isEmpty() }?.also {
-                                    tbody {
-                                        classes = setOf("query")
-                                        tr {
-                                            th {
-                                                colSpan = "2"
-                                                +"Query Parameters"
-                                            }
+                                    div {
+                                        classes = setOf("query", "table")
+                                        div {
+                                            classes = setOf("table-header")
+                                            +"Query Parameters"
                                         }
                                         it.forEach { (parameterName, parameterValues) ->
                                             parameterValues.forEach { parameterValue ->
-                                                tr {
-                                                    td {
-                                                        +parameterName
-                                                    }
-                                                    td {
-                                                        +parameterValue
-                                                    }
-                                                }
+                                                div { +parameterName }
+                                                div { +parameterValue }
                                             }
                                         }
                                     }
                                 }
                                 call.request.headers.toMap().takeUnless { it.isEmpty() }?.also {
-                                    tbody {
-                                        classes = setOf("headers")
-                                        tr {
-                                            th {
-                                                colSpan = "2"
-                                                +"Headers"
-                                            }
+                                    div {
+                                        classes = setOf("query", "table")
+                                        div {
+                                            classes = setOf("table-header")
+                                            +"Headers"
                                         }
                                         it.forEach { (headerName, headerValues) ->
                                             headerValues.forEach { headerValue ->
-                                                tr {
-                                                    td {
-                                                        +headerName
-                                                    }
-                                                    td {
-                                                        +headerValue
-                                                    }
-                                                }
+                                                div { +headerName }
+                                                div { +headerValue }
                                             }
                                         }
                                     }
                                 }
 
                                 body.takeUnless { it.isEmpty() }?.also { body ->
+
                                     tbody {
                                         classes = setOf("body")
                                         tr {
